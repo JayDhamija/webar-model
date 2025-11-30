@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>WebAR Model</title>
+
+    <!-- model-viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <model-viewer src="model.glb" ios-src="model.usdz" ar ar-modes="scene-viewer quick-look webxr" camera-controls auto-rotate>
+    </model-viewer>
+</body>
+
+</html>
