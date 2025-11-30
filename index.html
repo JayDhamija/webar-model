@@ -1,84 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Rocket AR Experience</title>
-
-    <!-- Model Viewer -->
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js">
-    </script>
-
+    <meta charset="utf-8">
+    <title>Rocket AR</title>
     <style>
         body {
             margin: 0;
-            background: #0a0a0a;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-        
-        #container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-        }
-        /* Clean AR Button */
-        
-        .ar-button {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 14px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 25px;
-            background: #ffffff;
-            color: #000000;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);
-        }
-        
-        .ar-button:hover {
-            background: #e2e2e2;
-        }
-        /* Title Overlay */
-        
-        .title {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            flex-direction: column;
             color: white;
-            font-size: 24px;
+            font-family: Arial, sans-serif;
+        }
+        
+        a.button {
+            background: white;
+            color: black;
+            padding: 14px 25px;
+            border-radius: 20px;
+            font-size: 20px;
+            text-decoration: none;
+            margin: 10px;
             font-weight: bold;
-            letter-spacing: 1px;
         }
     </style>
 </head>
 
 <body>
 
-    <div id="container">
-        <div class="title">Rocket 3D Viewer + AR</div>
+    <h1>Rocket AR Experience 🚀</h1>
 
-        <model-viewer id="rocket" src="model.glb" ios-src="model1.usdz" exposure="1.2" shadow-intensity="1" camera-controls auto-rotate ar ar-modes="scene-viewer quick-look webxr" style="width:100%; height:100%;">
-        </model-viewer>
+    <!-- Android ARCore Button -->
+    <a class="button" href="https://arvr.google.com/scene-viewer/1.0?file=https://jaydhamija.github.io/webar-model/model.glb&mode=ar_only">
+    View in AR (Android)
+  </a>
 
-        <button class="ar-button" id="openAR">View in AR 🚀</button>
-    </div>
-
-    <script>
-        const mv = document.getElementById("rocket");
-        const btn = document.getElementById("openAR");
-
-        btn.addEventListener("click", () => {
-            mv.activateAR();
-        });
-    </script>
+    <!-- iPhone ARKit Button -->
+    <a class="button" href="model1.usdz" rel="ar">
+    View in AR (iPhone)
+  </a>
 
 </body>
 
